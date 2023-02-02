@@ -1,0 +1,30 @@
+{
+  "name": "amlrs-frontend-interview",
+  "version": "0.2.0",
+  "private": true,
+  "browserslist": [
+    "last 1 Chrome versions",
+    "last 1 Firefox versions"
+  ],
+  "scripts": {
+    "start-api": "node api",
+    "start-js": "parcel src-js/index.html --no-cache --open",
+    "start-ts": "parcel src-ts/index.html --no-cache --open"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@mui/material": "^5.8.1",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.0.1",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.5",
+    "express": "^4.18.1",
+    "parcel": "^2.5.0",
+    "process": "^0.11.10",
+    "typescript": "^4.6.4"
+  }
+}
