@@ -3,5 +3,6 @@ export const countAverageRisk = (risks: number[]) => {
   // every element to actual sum
   const sum = risks.reduce((partialSum, a) => partialSum + a, 0);
 
-  return (sum / risks.length).toFixed(1);
+  const result = (sum / risks.length).toFixed(1);
+  return result.endsWith("0") ? parseInt(result) : result;
 };
