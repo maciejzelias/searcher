@@ -1,16 +1,8 @@
 import { getApiCallUrl } from "./getApiCallUrl";
-
-type Result = {
-  date_published: string;
-  id: string;
-  risk_score: number;
-  snippet: string;
-  title: string;
-  url: string;
-};
+import { Card } from "../models/card";
 
 type ResponseType = {
-  results: Result[];
+  results: Card[];
   msg: string;
 };
 

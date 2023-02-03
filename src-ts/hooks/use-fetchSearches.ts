@@ -1,11 +1,12 @@
 import { useState, useEffect, useCallback } from "react";
 import { getSearches } from "../apiCalls/searchApiCall";
+import { Card } from "../models/card";
 
 const useFetchSearches = () => {
   const [query, setQuery] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [cards, setCards] = useState<any[]>([]);
+  const [cards, setCards] = useState<Card[] | any[]>([]);
 
   const performSearch = useCallback(async () => {
     try {

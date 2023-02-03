@@ -1,8 +1,8 @@
 import { TextField, Typography, Box } from "@mui/material";
-import Card from "../Card";
 
 import { countAverageRisk } from "../../helpers/averageRiskHelper";
 import useFetchSearches from "../../hooks/use-fetchSearches";
+import Card from "../card";
 
 export default function MainContent() {
   const { setQuery, cards, error, isLoading } = useFetchSearches();
