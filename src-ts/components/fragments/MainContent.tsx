@@ -1,37 +1,11 @@
 import { TextField, Typography, Box } from "@mui/material";
-import { useEffect, useState } from "react";
-import Card from "../card/Card";
+import Card from "../Card";
 
 import { countAverageRisk } from "../../helpers/averageRiskHelper";
-import { getSearches } from "../../apiCalls/searchApiCall";
+import useFetchSearches from "../../hooks/use-fetchSearches";
 
 export default function MainContent() {
-  const [query, setQuery] = useState<string>("");
-  const [error, setError] = useState<String>("");
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [cards, setCards] = useState<any[]>([]);
-
-  useEffect(() => {
-    if (query) setIsLoading(true);
-    else setIsLoading(false);
-    setError("");
-    let timer = setTimeout(async () => {
-      if (query) {
-        try {
-          const response = await getSearches(query);
-          setCards(response.data.results);
-          setError(response.msg);
-        } catch (error) {
-          setError("Error during fetching data!");
-        }
-      } else {
-        setCards([]);
-      }
-      setIsLoading(false);
-    }, 1500);
-
-    return () => clearTimeout(timer);
-  }, [query]);
+  const { setQuery, cards, error, isLoading } = useFetchSearches();
 
   const handleChangeSearch = (
     event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
